@@ -1,0 +1,2 @@
+# Magang-App
+(Client-side)
