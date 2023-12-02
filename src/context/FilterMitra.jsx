@@ -13,8 +13,8 @@ const FilterContextProvider = (props) => {
     const dataMitra = data;
     const filteredMitra = dataMitra.filter((mitra) => mitra.name.toLowerCase().includes(keyword.toLowerCase()) || mitra.activity_name.toLowerCase().includes(keyword.toLowerCase()));
     if (total || location || mitra_name) {
-      const filteredMitra = dataMitra.filter((mitra) => (mitra.total >= total.min && mitra.total <= total.max) || mitra.location == location || mitra.mitra_name == mitra_name);
-      setMitra(filteredMitra);
+      const filteredMitraByOther = dataMitra.filter((mitra) => (mitra.total >= total.min && mitra.total <= total.max) || mitra.location === location || mitra.mitra_name === mitra_name);
+      setMitra(filteredMitraByOther);
     }
     setMitra(filteredMitra);
   };

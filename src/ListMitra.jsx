@@ -25,7 +25,7 @@ function ListMitra() {
   // Return
   return (
     <>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {currentItems.map((item, index) => (
           <Card key={index} data_magang={item} />
         ))}
@@ -33,7 +33,7 @@ function ListMitra() {
 
       <div>
         {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
-          <button key={{ page }} onClick={() => handlePageChange(page)} className="m-2 w-10 p-2 text-blue-800 border border-blue-800 rounded-md">
+          <button key={page} onClick={() => handlePageChange(page)} className="m-2 w-10 p-2 text-blue-800 border border-blue-800 rounded-md">
             {page}
           </button>
         ))}
