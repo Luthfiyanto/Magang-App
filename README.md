@@ -6,10 +6,10 @@ In this project, I used **React** for creating component and state management, *
 https://magangapp.vercel.app/
 
 ## How to run in local
-1. Clone the project <br>
-  ```bash
-  git clone https://github.com/Luthfiyanto/Magang-App.git
-  ```
+1. Clone the project
+   ```bash
+   git clone https://github.com/Luthfiyanto/Magang-App.git
+   ```
 2. Install dependencies
    ```bash
    npm install
