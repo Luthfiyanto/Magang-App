@@ -1,8 +1,6 @@
-# React + Vite
+# Magang-App with React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website to discover MSIB Internship Batch 6. It was built with ReactJs and Vite. The provided features are filtering by keyword, range of quota, location, and internship partner. It use data that I've gotten by scrapping data from Kampus Merdeka website and then convert it into json file. In other word, it is a redesign user interface from Kampus Merdeka website.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+In this project, I used React for creating component and state management, Tailwind css to styling the web, and Vercel for deployment. You can see the preview here:
+https://magangapp.vercel.app/
