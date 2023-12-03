@@ -4,3 +4,17 @@ Website to discover MSIB Internship Batch 6. It was built with ReactJs and Vite.
 
 In this project, I used **React** for creating component and state management, **Tailwind css** to styling the web, and **Vercel** for deployment. You can see the preview here:
 https://magangapp.vercel.app/
+
+## How to run in local
+1. Clone the project <br>
+  ```bash
+  git clone https://github.com/Luthfiyanto/Magang-App.git
+  ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Run
+   ```bash
+   npm run dev
+   ```
