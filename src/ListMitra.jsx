@@ -31,7 +31,7 @@ function ListMitra() {
         ))}
       </div>
 
-      <div>
+      <div className="m-5">
         {Array.from({ length: totalPages }, (_, index) => index + 1).map((page) => (
           <button key={page} onClick={() => handlePageChange(page)} className="m-2 w-10 p-2 text-blue-800 border border-blue-800 rounded-md">
             {page}

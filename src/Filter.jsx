@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { FilterContext } from "./context/FilterMitra";
 import InputText from "./components/InputText";
 import OptionInput from "./components/OptionInput";
+import icon from "./assets/icon";
 
 function Filter() {
   const [total, setTotal] = useState({ min: null, max: null });
@@ -24,30 +25,22 @@ function Filter() {
     }
   }, []);
   return (
-    <article>
-      <InputText id={"keyword"} value={keyword} onChange={(e) => setKeyword(e.target.value)} />
-      {/* <InputText id={"total"} value={total} onChange={(e) => setTotal(e.target.value)} /> */}
+    <article className="grid md:grid-cols-2 lg:grid-cols-5 m-3 p-3 sticky top-0 bg-white justify-center shadow-md shadow-slate-400 rounded-md">
+      <InputText id={"keyword"} icon={icon.keyword} value={keyword} onChange={(e) => setKeyword(e.target.value)} />
       <OptionInput
+        icon={icon.total}
         id={"total"}
         value={total}
         onChange={(e) => {
           const [min, max] = e.target.value.split("-");
-          setTotal({ min: parseInt(min), max: parseInt(max) });
+          setTotal({ min: min ? parseInt(min) : null, max: max ? parseInt(max) : null });
         }}
       />
-      <InputText id={"location"} value={location} onChange={(e) => setLocation(e.target.value)} />
-      <InputText id={"mitra"} value={mitra_name} onChange={(e) => setMitra_name(e.target.value)} />
-      <button type="submit" onClick={onSubmit}>
-        Filter
+      <InputText id={"location"} icon={icon.location} value={location} onChange={(e) => setLocation(e.target.value)} />
+      <InputText id={"mitra"} icon={icon.mitra} value={mitra_name} onChange={(e) => setMitra_name(e.target.value)} />
+      <button type="submit" onClick={onSubmit} className="text-white bg-blue-950 mx-2 rounded-lg">
+        Cari
       </button>
-      <div className="cek">
-        <p>{keyword}</p>
-        <p>
-          {total.min} - {total.max}
-        </p>
-        <p>{location}</p>
-        <p>{mitra_name}</p>
-      </div>
     </article>
   );
 }

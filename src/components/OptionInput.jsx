@@ -1,4 +1,4 @@
-function OptionInput({ id, value, onChange }) {
+function OptionInput({ id, value, onChange, icon }) {
   const valueOption = [
     {},
     { min: 0, max: 10 },
@@ -13,13 +13,19 @@ function OptionInput({ id, value, onChange }) {
     { min: 91, max: 100 },
   ];
   return (
-    <select name={id} id={id} value={`${value.min}-${value.max}`} onChange={onChange}>
-      {valueOption.map((item, index) => (
-        <option key={index} value={`${item.min}-${item.max}`}>
-          {item.min} - {item.max}
-        </option>
-      ))}
-    </select>
+    <div className="flex mx-2 justify-center items-center">
+      <label htmlFor={id} className="">
+        {icon}
+      </label>
+      <select name={id} id={id} value={`${value.min}-${value.max}`} onChange={onChange} className="w-full m-1 py-1 px-2 rounded-lg border border-blue-600 text-slate-600 outline-none focus:outline-blue-400">
+        {valueOption.map((item, index) => (
+          <option key={index} value={`${item.min}-${item.max}`}>
+            {/* {item.min} - {item.max} */}
+            {!item.min && !item.max ? "kuota" : `${item.min} - ${item.max}`}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }
 

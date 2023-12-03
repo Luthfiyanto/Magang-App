@@ -9,14 +9,14 @@ const FilterContextProvider = (props) => {
   const submitButton = (payload) => {
     const { keyword, total, location, mitra_name } = payload;
 
-    setMitra([]);
-    const dataMitra = data;
-    const filteredMitra = dataMitra.filter((mitra) => mitra.name.toLowerCase().includes(keyword.toLowerCase()) || mitra.activity_name.toLowerCase().includes(keyword.toLowerCase()));
-    if (total || location || mitra_name) {
-      const filteredMitraByOther = dataMitra.filter((mitra) => (mitra.total >= total.min && mitra.total <= total.max) || mitra.location === location || mitra.mitra_name === mitra_name);
-      setMitra(filteredMitraByOther);
-    }
-    setMitra(filteredMitra);
+    const filterByName = (item) => item.name.toLowerCase().includes(keyword.toLowerCase()) || item.activity_name.toLowerCase().includes(keyword.toLowerCase());
+    const filterByTotal = (item) => (!total.min && !total.max) || (item.total >= total.min && item.total <= total.max);
+    const filterByLocation = (item) => !location || item.location.toLowerCase().includes(location.toLowerCase());
+    const filterByMitraName = (item) => !mitra_name || item.mitra_name.toLowerCase().includes(mitra_name.toLowerCase());
+
+    const result = data.filter((item) => filterByName(item) && filterByTotal(item) && filterByLocation(item) && filterByMitraName(item));
+    setMitra(result);
+    console.log(result);
   };
 
   const getAllMitra = () => {
