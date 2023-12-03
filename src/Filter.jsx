@@ -25,7 +25,7 @@ function Filter() {
     }
   }, []);
   return (
-    <article className="grid md:grid-cols-2 lg:grid-cols-5 m-3 p-3 sticky top-0 bg-white justify-center shadow-md shadow-slate-400 rounded-md">
+    <article className="grid md:grid-cols-2 lg:grid-cols-5 gap-2 m-3 p-3 sticky top-0 bg-white justify-center shadow-md shadow-slate-400 rounded-md">
       <InputText id={"keyword"} icon={icon.keyword} value={keyword} onChange={(e) => setKeyword(e.target.value)} />
       <OptionInput
         icon={icon.total}
@@ -38,7 +38,7 @@ function Filter() {
       />
       <InputText id={"location"} icon={icon.location} value={location} onChange={(e) => setLocation(e.target.value)} />
       <InputText id={"mitra"} icon={icon.mitra} value={mitra_name} onChange={(e) => setMitra_name(e.target.value)} />
-      <button type="submit" onClick={onSubmit} className="text-white bg-blue-950 mx-2 rounded-lg">
+      <button type="submit" onClick={onSubmit} className="text-white bg-blue-950 mx-2 py-2 lg:py-1 rounded-lg">
         Cari
       </button>
     </article>
